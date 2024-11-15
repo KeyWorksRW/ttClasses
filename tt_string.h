@@ -328,6 +328,14 @@ public:
     // change to.
     bool ChangeDir(bool is_dir = true) const;
 
+    tt_string& operator=(const tt_string& other)
+    {
+        if (this != &other)
+        {
+            std_base::operator=(other);
+        }
+        return *this;
+    }
     tt_string& operator<<(std::string_view str)
     {
         *this += str;
